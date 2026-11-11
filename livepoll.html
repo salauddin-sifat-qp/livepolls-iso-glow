@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How LivePoll works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Fira+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="livepoll.css" />
+  </head>
+  <body>
+    <svg class="defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="glow" filterUnits="userSpaceOnUse" x="-2000" y="-2000" width="6000" height="6000" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="3" result="b" />
+          <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <header class="top">
+      <a class="brand" href="#/">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2 21 7v10l-9 5-9-5V7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M3 7l9 5 9-5M12 12v10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+          <path d="M12 12l9-5v10l-9 5z" fill="var(--accent)" />
+        </svg>
+        LivePoll explained
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#/edge" data-nav="build">How it’s built</a>
+        <a href="#/use" data-nav="use">Run a live poll</a>
+      </nav>
+      <div class="tools">
+        <div class="swatches" id="swatches" role="group" aria-label="Accent colour"></div>
+        <div class="seg" role="group" aria-label="Theme">
+          <button type="button" data-theme-set="light" aria-label="Light theme" title="Light">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+              <circle cx="8" cy="8" r="3" />
+              <path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1" />
+            </svg>
+          </button>
+          <button type="button" data-theme-set="dark" aria-label="Dark theme" title="Dark">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
+              <path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="view" tabindex="-1"></main>
+
+    <footer class="foot">
+      <a href="https://iso-glow.vercel.app" target="_blank" rel="noopener">Made with ISO-GLOW ↗</a>
+    </footer>
+
+    <script src="lessons.js"></script>
+    <script src="iso.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
